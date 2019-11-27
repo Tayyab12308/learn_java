@@ -21,56 +21,51 @@ public class Hello {
         if (arr.size() < 2) return arr;
 
         int mid = arr.size() / 2;
-        List<Integer> left = arr.subList(0, mid);
-        List<Integer> right = arr.subList(mid, arr.size() - 1);
-        System.out.println("left" + left);
-        System.out.println("right" + right);
+        List<Integer> left = new ArrayList<>(arr.subList(0, mid));
+        List<Integer> right = new ArrayList<>(arr.subList(mid, arr.size()));
+
         List<Integer> left_sorted = merge_sort(left);
         List<Integer> right_sorted = merge_sort(right);
-        System.out.println("left sorted" + left_sorted);
-        System.out.println("right sorted" + right_sorted);
+
         return merge(left_sorted, right_sorted);
     }
 
     public static List<Integer> merge(List<Integer> left, List<Integer> right) {
         List<Integer> merged = new ArrayList<>(Arrays.asList());
-        System.out.println("left in merge" + left);
-        System.out.println("right in merge" + right);
         while (left.size() > 0 && right.size() > 0) {
             int left_el = left.get(0);
-            System.out.println("left_el" + left_el);
             int right_el = right.get(0);
-            System.out.println("right_el" + right_el);
             if (left_el < right_el) {
                 merged.add(left_el);
                 left.remove(0);
-                System.out.println("merged after if" + merged);
-                System.out.println("left after remove" + left);
-                System.out.println("size of left after remove" + left.size());
-                System.out.println("right " + right);
             } else {
                 merged.add(right_el);
                 right.remove(0);
-                System.out.println("merged after else" + merged);
-                System.out.println("right after remove" + right);
-                System.out.println("left" + left);
             }
         }
-        System.out.println("reached out of while");
         if (left.size() > 0) merged.addAll(left);
         if (right.size() > 0) merged.addAll(right);
         return merged;
     }
-    
+
+    public static void displayHighScorePosition(String playerName, int position) {
+        System.out.println(playerName + " managed to get into position " + position);
+    }
+
+    public static int calculateHighScorePosition(Integer score) {
+        if (score > 1000) {
+            return 1;
+        } else if (score > 500 && score < 1000) {
+            return 2;
+        } else if (score > 100 && score < 500) {
+            return 3;
+        } else {
+            return 4;
+        }
+    }
 
     public static void main(String[] args) {
-        boolean gameOver = true;
-        int score = 10000;
-        int levelCompleted = 8;
-        int bonus = 200;
-        if (gameOver) {
-            int finalScore = score + (levelCompleted * bonus);
-            System.out.println("Your final score was " + finalScore);
-        }
+        List<Integer> unsorted = new ArrayList<>(Arrays.asList(1, 3, 2, 4, 6, 5));
+        System.out.println(merge_sort(unsorted));
     }
 }
