@@ -104,6 +104,11 @@ public class Hello {
         }
     }
 
+    public static boolean isEvenNumber(int number) {
+        if (number < 0 || number % 2 != 0) return false;
+        return true;
+    }
+
     public static void main(String[] args) {
 //        List<Integer> unsorted = new ArrayList<>(Arrays.asList(1, 3, 2, 4, 6, 5));
 //        System.out.println(merge_sort(unsorted));
@@ -112,16 +117,23 @@ public class Hello {
 //        System.out.println(getDurationString(65, 45));
 //        System.out.println(getDurationString(300));
 //        printDayOfWeek(2);
+        Scanner sc = new Scanner(System.in);
+
+        int validNumCount = 0;
         int sum = 0;
-        int count = 0;
-        for (int i = 1; i < 1000; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("i was " + i);
-                sum += i;
-                count += 1;
-                if (count == 5) break;
+        while (validNumCount < 10) {
+            System.out.println("Enter number #" + (validNumCount + 1));
+            boolean isAnInt = sc.hasNextInt();
+            if (isAnInt) {
+                int num = sc.nextInt();
+                sum += num;
+                validNumCount += 1;
+            } else {
+                System.out.println("Invalid Input. Try again");
             }
+            sc.nextLine();
         }
-        System.out.println("Sum was " + sum);
+        sc.close();
+        System.out.println("Total sum is " + sum);
     }
 }
