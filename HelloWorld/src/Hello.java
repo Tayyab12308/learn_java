@@ -92,6 +92,18 @@ public class Hello {
         return  getDurationString(minutes, remainingSeconds);
     }
 
+    public static void printDayOfWeek(int day) {
+        String[] daysOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        switch (day) {
+            case 0: case 1: case 2: case 3: case 4: case 5: case 6:
+                System.out.println("Day of week was " + daysOfWeek[day]);
+                break;
+            default:
+                System.out.println("Invalid Value");
+                break;
+        }
+    }
+
     public static void main(String[] args) {
 //        List<Integer> unsorted = new ArrayList<>(Arrays.asList(1, 3, 2, 4, 6, 5));
 //        System.out.println(merge_sort(unsorted));
@@ -99,15 +111,17 @@ public class Hello {
 //        System.out.println(calcFeetAndInchesToCentimeters(-2));
 //        System.out.println(getDurationString(65, 45));
 //        System.out.println(getDurationString(300));
-
-        char switchTest = 'C';
-        switch (switchTest) {
-            case 'A': case 'B': case 'C': case 'D':
-                System.out.println("Char was " + switchTest);
-                break;
-            default:
-                System.out.println("Char was neither A, B, C, or D");
-                break;
+//        printDayOfWeek(2);
+        int sum = 0;
+        int count = 0;
+        for (int i = 1; i < 1000; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("i was " + i);
+                sum += i;
+                count += 1;
+                if (count == 5) break;
+            }
         }
+        System.out.println("Sum was " + sum);
     }
 }
