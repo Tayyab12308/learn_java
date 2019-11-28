@@ -93,11 +93,30 @@ public class Hello {
     }
 
     public static void main(String[] args) {
-        List<Integer> unsorted = new ArrayList<>(Arrays.asList(1, 3, 2, 4, 6, 5));
-        System.out.println(merge_sort(unsorted));
+//        List<Integer> unsorted = new ArrayList<>(Arrays.asList(1, 3, 2, 4, 6, 5));
+//        System.out.println(merge_sort(unsorted));
+//
+//        System.out.println(calcFeetAndInchesToCentimeters(-2));
+//        System.out.println(getDurationString(65, 45));
+//        System.out.println(getDurationString(300));
 
-        System.out.println(calcFeetAndInchesToCentimeters(-2));
-        System.out.println(getDurationString(65, 45));
-        System.out.println(getDurationString(300));
+        char switchTest = '1';
+        switch (switchTest) {
+            case 'A':
+                System.out.println("Char was A");
+                break;
+            case 'B':
+                System.out.println("Char was B");
+                break;
+            case 'C':
+                System.out.println("Char was C");
+                break;
+            case 'D':
+                System.out.println("Char was D");
+                break;
+            default:
+                System.out.println("Char was neither A, B, C, or D");
+                break;
+        }
     }
 }
