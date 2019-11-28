@@ -100,19 +100,10 @@ public class Hello {
 //        System.out.println(getDurationString(65, 45));
 //        System.out.println(getDurationString(300));
 
-        char switchTest = '1';
+        char switchTest = 'C';
         switch (switchTest) {
-            case 'A':
-                System.out.println("Char was A");
-                break;
-            case 'B':
-                System.out.println("Char was B");
-                break;
-            case 'C':
-                System.out.println("Char was C");
-                break;
-            case 'D':
-                System.out.println("Char was D");
+            case 'A': case 'B': case 'C': case 'D':
+                System.out.println("Char was " + switchTest);
                 break;
             default:
                 System.out.println("Char was neither A, B, C, or D");
