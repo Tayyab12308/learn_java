@@ -64,8 +64,24 @@ public class Hello {
         }
     }
 
+    public static double calcFeetAndInchesToCentimeters(int feet, int inches) {
+        if (feet < 0 || inches < 0 || inches > 12) return -1;
+        int feetInInches = feet * 12;
+        int totalInches = inches + feetInInches;
+        return totalInches * 2.54;
+    }
+
+    public static double calcFeetAndInchesToCentimeters(int inches) {
+        if (inches < 0) return -1;
+        int feet = inches / 12;
+        int extraInches = inches % 12;
+        return calcFeetAndInchesToCentimeters(feet, extraInches);
+    }
+
     public static void main(String[] args) {
         List<Integer> unsorted = new ArrayList<>(Arrays.asList(1, 3, 2, 4, 6, 5));
         System.out.println(merge_sort(unsorted));
+
+        System.out.println(calcFeetAndInchesToCentimeters(-2));
     }
 }
