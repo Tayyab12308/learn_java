@@ -130,13 +130,20 @@ public class Hello {
 //        user1.depositFunds(10_000);
 //        System.out.println("balance after deposit is " + user1.getBalance());
 
-        VipCustomer c1 = new VipCustomer();
-        VipCustomer c2 = new VipCustomer("Tayyab");
-        VipCustomer c3 = new VipCustomer(800, "test@email.com");
-        VipCustomer c4 = new VipCustomer("Tayyab full", 9000000, "tayyabFull@email.com");
-        c1.printCustomerInfo();
-        c2.printCustomerInfo();
-        c3.printCustomerInfo();
-        c4.printCustomerInfo();
+//        VipCustomer c1 = new VipCustomer();
+//        VipCustomer c2 = new VipCustomer("Tayyab");
+//        VipCustomer c3 = new VipCustomer(800, "test@email.com");
+//        VipCustomer c4 = new VipCustomer("Tayyab full", 9000000, "tayyabFull@email.com");
+//        c1.printCustomerInfo();
+//        c2.printCustomerInfo();
+//        c3.printCustomerInfo();
+//        c4.printCustomerInfo();
+
+        Outlander outlander = new Outlander(36);
+        outlander.steer(30);
+        outlander.accelerate(30);
+        outlander.accelerate(40);
+        outlander.accelerate(-60);
+        outlander.accelerate(-10);
     }
 }
