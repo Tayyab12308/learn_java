@@ -117,23 +117,17 @@ public class Hello {
 //        System.out.println(getDurationString(65, 45));
 //        System.out.println(getDurationString(300));
 //        printDayOfWeek(2);
-        Scanner sc = new Scanner(System.in);
-
-        int validNumCount = 0;
-        int sum = 0;
-        while (validNumCount < 10) {
-            System.out.println("Enter number #" + (validNumCount + 1));
-            boolean isAnInt = sc.hasNextInt();
-            if (isAnInt) {
-                int num = sc.nextInt();
-                sum += num;
-                validNumCount += 1;
-            } else {
-                System.out.println("Invalid Input. Try again");
-            }
-            sc.nextLine();
-        }
-        sc.close();
-        System.out.println("Total sum is " + sum);
+        Bank user1 = new Bank(1234567890, 1_000_000, "Tayyab Iqbal", "tayyab@email.com", "90932233");
+        System.out.println("name is " + user1.getCustomerName());
+        System.out.println("account num is " + user1.getAccountNumber());
+        System.out.println("account balance is " + user1.getBalance());
+        System.out.println("email is " + user1.getEmail());
+        System.out.println("phone number is " + user1.getPhoneNumber());
+        user1.withdrawFunds(1_000_001);
+        System.out.println("balance after over withdrawal is " + user1.getBalance());
+        user1.withdrawFunds(1_000);
+        System.out.println("balance after valid withdrawal is " + user1.getBalance());
+        user1.depositFunds(10_000);
+        System.out.println("balance after deposit is " + user1.getBalance());
     }
 }
