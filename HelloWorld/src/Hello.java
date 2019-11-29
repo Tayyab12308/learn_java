@@ -117,17 +117,26 @@ public class Hello {
 //        System.out.println(getDurationString(65, 45));
 //        System.out.println(getDurationString(300));
 //        printDayOfWeek(2);
-        Bank user1 = new Bank(1234567890, 1_000_000, "Tayyab Iqbal", "tayyab@email.com", "90932233");
-        System.out.println("name is " + user1.getCustomerName());
-        System.out.println("account num is " + user1.getAccountNumber());
-        System.out.println("account balance is " + user1.getBalance());
-        System.out.println("email is " + user1.getEmail());
-        System.out.println("phone number is " + user1.getPhoneNumber());
-        user1.withdrawFunds(1_000_001);
-        System.out.println("balance after over withdrawal is " + user1.getBalance());
-        user1.withdrawFunds(1_000);
-        System.out.println("balance after valid withdrawal is " + user1.getBalance());
-        user1.depositFunds(10_000);
-        System.out.println("balance after deposit is " + user1.getBalance());
+//        Bank user1 = new Bank(1234567890, 1_000_000, "Tayyab Iqbal", "tayyab@email.com", "90932233");
+//        System.out.println("name is " + user1.getCustomerName());
+//        System.out.println("account num is " + user1.getAccountNumber());
+//        System.out.println("account balance is " + user1.getBalance());
+//        System.out.println("email is " + user1.getEmail());
+//        System.out.println("phone number is " + user1.getPhoneNumber());
+//        user1.withdrawFunds(1_000_001);
+//        System.out.println("balance after over withdrawal is " + user1.getBalance());
+//        user1.withdrawFunds(1_000);
+//        System.out.println("balance after valid withdrawal is " + user1.getBalance());
+//        user1.depositFunds(10_000);
+//        System.out.println("balance after deposit is " + user1.getBalance());
+
+        VipCustomer c1 = new VipCustomer();
+        VipCustomer c2 = new VipCustomer("Tayyab");
+        VipCustomer c3 = new VipCustomer(800, "test@email.com");
+        VipCustomer c4 = new VipCustomer("Tayyab full", 9000000, "tayyabFull@email.com");
+        c1.printCustomerInfo();
+        c2.printCustomerInfo();
+        c3.printCustomerInfo();
+        c4.printCustomerInfo();
     }
 }
