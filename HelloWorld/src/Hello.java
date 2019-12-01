@@ -141,9 +141,29 @@ public class Hello {
         return arr;
     }
 
+    public static int findMin(int[] arr) {
+        int min = arr[0];
+        for(int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) min = arr[i];
+        }
+        return min;
+    }
+
+    public static void reverseArray(int[] arr) {
+        System.out.println("Original array was " + Arrays.toString(arr));
+        for(int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        System.out.println("Reversed array is " + Arrays.toString(arr));
+    }
+
     public static void main(String[] args) {
-        int[] arr = getIntegers(5);
+        int[] arr = getIntegers(6);
         arr = sortArray(arr);
         printArray(arr);
+        System.out.println(findMin(arr));
+        reverseArray(arr);
     }
 }
