@@ -160,10 +160,21 @@ public class Hello {
     }
 
     public static void main(String[] args) {
-        int[] arr = getIntegers(6);
+        int[] arr = getIntegers(1);
         arr = sortArray(arr);
         printArray(arr);
         System.out.println(findMin(arr));
         reverseArray(arr);
+
+        Contacts contacts = new Contacts();
+
+        contacts.addContact("John");
+        contacts.printContacts();
+        contacts.addContact("Joe");
+        contacts.printContacts();
+        contacts.deleteContact("John");
+        contacts.printContacts();
+        contacts.editContact("Jon", "Joe Doe");
+        contacts.printContacts();
     }
 }
